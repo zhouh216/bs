@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fiction.crawler.biz.dao.sql.FictionInfoDao">
+    <resultMap id="BaseResultMap" type="com.fiction.crawler.domain.dto.FictionInfo">
+        <constructor>
+            <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="create_time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="update_time" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="fiction_name" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="fiction_author" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="img" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="is_over" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="fiction_size" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="fiction_type" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="sex_type" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="subscription_num" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="collect_num" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="click_num" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="ext" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        </constructor>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    id, create_time, update_time, fiction_name, fiction_author, img, is_over, fiction_size, 
+    fiction_type, sex_type, subscription_num, collect_num, click_num, ext
+  </sql>
+
+        <select id="selectList" resultType="java.util.Map" parameterType="java.util.Map">
+            select
+            <include refid="Base_Column_List"></include>
+            from fiction_info
+            <where>
+                <if test="inList != null">
+                   and id in
+                   <foreach collection="inList" item="item" open="(" separator="," close=")">
+                       #{item}
+                   </foreach>
+                </if>
+            </where>
+        </select>
+
+    <select id="selectByName" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from fiction_info
+        where fiction_name like concat('%',#{name},'%')
+        order by click_num desc
+        <if test="start != null and pageSize != null">
+            LIMIT #{start}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="selectByNameCount" resultType="int" parameterType="java.util.Map">
+    select
+    count(1)
+    from fiction_info
+    where fiction_name like concat('%',#{name},'%')
+    order by click_num desc
+  </select>
+
+    <select id="selectByOrderType" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from fiction_info
+        <where>
+            <if test="fictionType != null">
+                and fiction_type = #{fictionType}
+            </if>
+            <if test="notInList !=null">
+                and id not in
+                <foreach collection="notInList" item="item" index="index" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+
+        order by
+        CASE
+        WHEN #{orderType} = 1 THEN subscription_num
+        WHEN #{orderType} = 2 THEN collect_num
+        ELSE click_num
+        END
+        desc, create_time desc
+        <if test="start != null and pageSize != null">
+            LIMIT #{start}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="selectByOrderTypeCount" resultType="int" parameterType="java.util.Map">
+        select
+        count(1)
+        from fiction_info
+        <where>
+            <if test="notInList !=null">
+                and id not in
+                <foreach collection="notInList" item="item" index="index" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+
+        order by
+        CASE
+        WHEN #{orderType} = 1 THEN subscription_num
+        WHEN #{orderType} = 2 THEN collect_num
+        WHEN #{orderType} = 3 THEN click_num
+        END
+        desc, create_time desc
+    </select>
+
+
+    <select id="selectByFictionType" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from fiction_info
+        where fiction_type = #{fictionType}
+        order by click_num desc, create_time desc
+        <if test="start != null and pageSize != null">
+            LIMIT #{start}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="selectByFictionTypeCount" resultType="int" parameterType="java.util.Map">
+    select
+    count(1)
+    from fiction_info
+    where fiction_type = #{fictionType}
+    order by click_num desc, create_time desc
+  </select>
+    <select id="selectBySexType" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from fiction_info
+        where sex_type = #{sexType}
+        order by click_num desc, create_time desc
+        <if test="start != null and pageSize != null">
+            LIMIT #{start}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="selectBySexTypeCount" resultType="int" parameterType="java.util.Map">
+    select
+    count(1)
+    from fiction_info
+    where sex_type = #{sexType}
+    order by click_num desc, create_time desc
+  </select>
+
+    <select id="afterLoad" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from fiction_info
+        order by create_time desc
+        LIMIT 0,12
+    </select>
+
+    <update id="addOrSubtract">
+        update fiction_info
+        set
+        <if test="falg == 1">
+            click_num = click_num + ${num}
+        </if>
+        <if test="falg == 2">
+            collect_num = collect_num + ${num}
+        </if>
+        <if test="falg == 3">
+            subscription_num = subscription_num + ${num}
+        </if>
+        where id = #{id}
+    </update>
+
+
+</mapper>

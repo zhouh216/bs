@@ -1,0 +1,387 @@
+
+<html>
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>免费小说推荐_热门全本小说免费在线阅读_小说阅读网</title> 
+  <meta name="description" content="最热门的免费小说网,提供人气古言小说,现言小说,幻言小说,仙侠小说,都市小说,历史小说,同人小说,悬疑小说,灵异小说,二次元小说,免费小说,穿越小说在线阅读与下载.大神作品齐聚起点,最新章节每日更新"> 
+  <meta name="keywords" content="免费小说阅读网,免费网络小说,免费玄幻小说,免费都市小说,小说,免费小说,免费言情小说,免费全本小说,免费小说txt电子书,好看的小说,小说排行榜"> 
+  <meta name="robots" content="all"> 
+  <meta name="googlebot" content="all"> 
+  <meta name="baiduspider" content="all"> 
+  <meta http-equiv="mobile-agent" content="format=wml; url=http://m.readnovel.com"> 
+  <meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.readnovel.com"> 
+  <meta http-equiv="mobile-agent" content="format=html5; url=http://m.readnovel.com"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+  <meta name="renderer" content="webkit"> 
+  <script>document.domain = 'readnovel.com';</script> 
+    </script>--> 
+</script> 
+  <link rel="shortcut icon" type="image/x-icon" href="//qidian.gtimg.com/readnovel/favicon/favicon.ico"> 
+  <link rel="Bookmark" type="image/x-icon" href="//qidian.gtimg.com/readnovel/favicon/favicon.ico"> 
+  <link rel="stylesheet" data-ignore="true" href="//qidian.gtimg.com/c/=/readnovel/css/lbfUI/css/Checkbox.bda6c.css,/readnovel/css/reset.e0c8b.css,/readnovel/css/font.db450.css,/readnovel/css/header.6206e.css,/readnovel/css/module.73d4b.css,/readnovel/css/list_module.65ece.css,/readnovel/css/free.81f32.css,/readnovel/css/all_finish.15f38.css,/readnovel/css/layout.9f7c8.css,/readnovel/css/popup.b751d.css,/readnovel/css/footer.729bd.css,/readnovel/css/lbfUI/css/ComboBox.06c7f.css,/readnovel/css/lbfUI/css/Button.96ca9.css"> 
+ </head> 
+ <body> 
+  <div class="wrap"> 
+   <div class="header"> 
+    <div class="top-head box-center cf"> 
+     <h1 class="logo" title="小说阅读网"> <a href="//www.readnovel.com"><em></em></a> </h1> 
+     <div class="search-wrap"> 
+      <form class="cf" id="formUrl" action="//www.readnovel.com/search" method="get" target="_blank"> 
+       <input class="search-box" id="s-box" name="kw" type="text" placeholder="冥冥之中喜欢你" autocomplete="off" value=""> 
+       <input class="submit-input" type="submit" id="searchSubmit" data-eid="">
+       <label id="search-btn" class="search-btn" for="searchSubmit"><em class="iconfont"></em></label> 
+      </form> 
+     </div> 
+     <div class="user-wrap"> 
+      <div class="avatar" id="j-userWrap">
+       <a class="link" href="javascript:" id="j-avatar"><img src="//qidian.gtimg.com/readnovel/images/ico/account.1e031.png"></a> 
+       <div class="down-drop" id="j-userDownDrop"> 
+        <dl> 
+         <dd>
+          <a href="javascript:" id="sign-out">退出</a>
+         </dd> 
+        </dl> 
+       </div> 
+      </div> 
+      <ul> 
+       <li><a class="head-msg" href="javascript:" title="消息中心"><em class="iconfont"></em></a></li> 
+       <li><a class="head-shelf" href="javascript:"><em class="iconfont"></em>我的书架</a></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="top-nav-wrap box-center cf"> 
+     <div class="left-nav fl"> 
+      <ul class="cf"> 
+       <li class="type " id="j-navType"><a href="/all"><em class="iconfont"></em>全部分类</a> 
+        <div class="type-list" id="j-typeList"> 
+         <cite></cite> 
+         <dl> 
+          <dd>
+           <a href="/all?catId=30020"><em class="iconfont"></em>现代言情</a>
+          </dd> 
+          <dd>
+           <a href="/all?catId=30013"><em class="iconfont"></em>古代言情</a>
+          </dd> 
+          <dd>
+           <a href="/all?catId=30031"><em class="iconfont"></em>浪漫青春</a>
+          </dd> 
+          <dd>
+           <a href="/all?catId=30001"><em class="iconfont"></em>玄幻言情</a>
+          </dd> 
+          <dd>
+           <a href="/all?catId=30008"><em class="iconfont"></em>仙侠奇缘</a>
+          </dd> 
+          <dd>
+           <a href="/all?catId=30036"><em class="iconfont"></em>悬疑灵异</a>
+          </dd> 
+          <dd>
+           <a href="/all?catId=30042"><em class="iconfont"></em>科幻空间</a>
+          </dd> 
+          <dd>
+           <a href="/all?catId=30050"><em class="iconfont"></em>游戏竞技</a>
+          </dd> 
+          <dd>
+           <a href="/all?catId=30083"><em class="iconfont"></em>短篇小说</a>
+          </dd> 
+          <dd>
+           <a href="/all?catId=30055"><em class="iconfont"></em><i>N次元</i></a>
+          </dd> 
+         </dl> 
+        </div> </li> 
+       <li class=""><a href="/rank">排行榜</a></li> 
+       <li class="act"><a href="/free">免费</a></li> 
+       <li class=""><a href="/finish">完本</a></li> 
+       <li class=""><a href="/xyqc">现言青春</a></li> 
+       <li class=""><a href="/gyxh">古言玄幻</a></li> 
+       <li class=""><a href="/smhx">神秘幻想</a></li> 
+      </ul> 
+     </div> 
+     <div class="right-nav fr"> 
+      <a class="j-goCharge" href="javascript:" target="_blank"><em class="iconfont"></em>充值</a> 
+      <a href="//write.qq.com/public/login.html?siteid=5" target="_blank"><em class="iconfont"></em>作家专区</a> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="free-container box-center"> 
+    <div class="free-type-tab mb30 cf"> 
+     <a class="lang" href="/free">限时免费</a> 
+     <a class="lang act" href="/free/all">免费作品</a> 
+    </div> 
+    <div id="free-channel-wrap"> 
+     <div class="free-work"> 
+      <div class="all-pro-wrap box-center cf"> 
+       <div class="range-sidebar fl"> 
+        <div class="inner-wrap"> 
+         <div class="site"> 
+          <a class="" href="/free/all?gender=2&amp;catId=-1">女生</a>
+          <a class="act" href="/free/all?gender=1&amp;catId=-1">男生</a> 
+         </div> 
+         <div class="selected"> 
+          <p><span>已选</span> <a class="all" href="javascript:" type="all">全部</a> </p>
+         </div> 
+         <div class="select-list"> 
+          <div class="work-filter type-filter"> 
+           <h3>分类</h3> 
+           <ul type="category"> 
+            <li data-id="-1" class="act"><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">全部<cite><i></i></cite></a></li> 
+            <li data-id="20001" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20001&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">玄幻<cite><i></i></cite></a></li> 
+            <li data-id="20005" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20005&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">奇幻<cite><i></i></cite></a></li> 
+            <li data-id="20010" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20010&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">武侠<cite><i></i></cite></a></li> 
+            <li data-id="20014" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20014&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">仙侠<cite><i></i></cite></a></li> 
+            <li data-id="20019" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20019&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">都市<cite><i></i></cite></a></li> 
+            <li data-id="20065" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20065&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">现实<cite><i></i></cite></a></li> 
+            <li data-id="20032" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20032&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">军事<cite><i></i></cite></a></li> 
+            <li data-id="20028" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20028&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">历史<cite><i></i></cite></a></li> 
+            <li data-id="20050" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20050&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">游戏<cite><i></i></cite></a></li> 
+            <li data-id="20054" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20054&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">体育<cite><i></i></cite></a></li> 
+            <li data-id="20042" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20042&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">科幻<cite><i></i></cite></a></li> 
+            <li data-id="20037" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20037&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">灵异<cite><i></i></cite></a></li> 
+            <li data-id="20059" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20059&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">二次元<cite><i></i></cite></a></li> 
+            <li data-id="20076" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=20076&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">短篇<cite><i></i></cite></a></li> 
+           </ul> 
+          </div> 
+          <div class="work-filter"> 
+           <h3>字数</h3> 
+           <ul type="size"> 
+            <li data-id="-1" class="act"><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">全部</a></li> 
+            <li data-id="6" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=6&amp;updT=-1&amp;orderBy=0">30万以下</a></li> 
+            <li data-id="2" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=2&amp;updT=-1&amp;orderBy=0">30~50万</a></li> 
+            <li data-id="3" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=3&amp;updT=-1&amp;orderBy=0">50~100万</a></li> 
+            <li data-id="4" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=4&amp;updT=-1&amp;orderBy=0">100~200万</a></li> 
+            <li data-id="5" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=5&amp;updT=-1&amp;orderBy=0">200万以上</a></li> 
+           </ul> 
+          </div> 
+          <div class="work-filter action-filter"> 
+           <h3>状态</h3> 
+           <ul type="action"> 
+            <li data-id="全部" class="act"><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">全部</a></li> 
+            <li data-id="连载" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=0&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">连载</a></li> 
+            <li data-id="完本" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">完本</a></li> 
+           </ul> 
+          </div> 
+          <div class="work-filter"> 
+           <h3>更新时间</h3> 
+           <ul type="update"> 
+            <li data-id="-1" class="act"><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">全部</a></li> 
+            <li data-id="1" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=1&amp;orderBy=0">三日内</a></li> 
+            <li data-id="2" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=2&amp;orderBy=0">七日内</a></li> 
+            <li data-id="6" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=6&amp;orderBy=0">半月内</a></li> 
+            <li data-id="3" class=""><a href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=3&amp;orderBy=0">一月内</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="main-content-wrap fl"> 
+        <div class="sort-wrap"> 
+         <a data-id="0" class="act" href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0">综合</a> 
+         <a data-id="9" class="" href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=9">字数</a> 
+         <a data-id="17" class="" href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=17">点击</a> 
+         <a data-id="3" class="" href="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=3">时间</a> 
+        </div> 
+        <div class="all-book-list inner-wrap"> 
+         <div class="right-book-list"> 
+          <ul> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/5787416704875901" target="_blank" title="敛财专家"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_5787416704875901/90" alt="敛财专家"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/5787416704875901" target="_blank" title="敛财专家">敛财专家</a></h3> 
+             <h4><a class="default">大秦骑兵</a></h4> 
+             <p class="tag"><span class="org">仙侠</span><span class="red">已完结</span><span class="blue">292.5万</span></p> 
+             <p class="intro"> 　　谁说修炼一定要清心寡欲，绝情绝欲？我巧取豪夺、低买高卖，聚敛天下财富； 　　谁说对仙人一定低眉顺眼，恭敬到姥姥家？仙人和我称兄道弟还要看我心情如何，散仙争得头破血流，只为的是要当我的看门狗； 　　谁说灵鬼大王、仙帝、魔皇是各界至尊，鼻子冲天？他们每次见了我都愁眉苦脸的，好像欠了我八百吊钱似的。 　　我从不欺行霸市，只不过每天有专人向我请示今天的晶石卖什么价；我从不欺男霸女，只不过她们个个如乳燕投怀； 　　我从不插手修行界的争斗，只不过每次都把各种争斗物资略微抬高点价钱售卖出去。 　　我是敛财专家，小小的控制了修行界一半以上的晶石矿，拥有着才比第二大灵药种植大户大那么三四十倍的种植园，店铺只有千余所，手下员工只有不起眼的万把人…… 　　唉，惭愧啊，这么点的产业实在是对不住我敛财专家的名头，革命尚未成功，同志仍须努力。 　　 </p> 
+            </div> </li> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/4920438404387303" target="_blank" title="女总裁的无敌保镖"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_4920438404387303/90" alt="女总裁的无敌保镖"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/4920438404387303" target="_blank" title="女总裁的无敌保镖">女总裁的无敌保镖</a></h3> 
+             <h4><a class="default">九不悔</a></h4> 
+             <p class="tag"><span class="org">都市</span><span class="red">连载中</span><span class="blue">6.24万</span></p> 
+             <p class="intro"> 超级兵王回到都市，做起了美女总裁的保镖，第一天就把人家给看了个精光，这可咋办…… 陪读，陪玩，陪吃，这还不算，竟然还要陪睡…… 保镖群：553828911 </p> 
+            </div> </li> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/8208057103829503" target="_blank" title="种植天王"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_8208057103829503/90" alt="种植天王"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/8208057103829503" target="_blank" title="种植天王">种植天王</a></h3> 
+             <h4><a class="default">骑马上虚空</a></h4> 
+             <p class="tag"><span class="org">都市</span><span class="red">连载中</span><span class="blue">14.3万</span></p> 
+             <p class="intro"> 我种下一颗种子，终于长出了果实…… 来自大千世界的种子，只有想不到的，没有种不出来的。 于是，苏芮很苦恼，我还是处男，种出一个闺女算啥事啊？ </p> 
+            </div> </li> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/9369988004249403" target="_blank" title="降临者之归来的剑鬼"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_9369988004249403/90" alt="降临者之归来的剑鬼"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/9369988004249403" target="_blank" title="降临者之归来的剑鬼">降临者之归来的剑鬼</a></h3> 
+             <h4><a class="default">熊猫王</a></h4> 
+             <p class="tag"><span class="org">游戏</span><span class="red">连载中</span><span class="blue">15.35万</span></p> 
+             <p class="intro"> 十年前患上绝症的天才游戏少年严铭，因苏醒无望而放弃治疗，却不知为何在新开服的《梦世界》续作中重生，成为介于NPC与玩家之间的特殊存在。为了解开身上的谜团，与一世相隔的亲人团聚，他拾起曾经大杀四方的剑艺，为了真实与虚妄的一切而战。和NPC称兄道弟？和玩家勾心斗角？……嘛，只要能活下去，怎样都行。 </p> 
+            </div> </li> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/5293622503204501" target="_blank" title="火眼"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_5293622503204501/90" alt="火眼"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/5293622503204501" target="_blank" title="火眼">火眼</a></h3> 
+             <h4><a class="default">迫击炮</a></h4> 
+             <p class="tag"><span class="org">军事</span><span class="red">连载中</span><span class="blue">42.79万</span></p> 
+             <p class="intro"> 苏虎，幼年流落在大别山，信念使得他锻炼成钢，参加红军后便显出了出色的侦察能力。抗战爆发后，部队投入抗日前线，他依旧担任侦察任务，每一次都出色地完成任务，在他担任部队指挥部警卫期间，更是利用出色的侦察以及作战力屡立战功。而且他还担负着掩护运送无数热血青年前往延安的任务。火眼——一名侦察员的抗日历程。 </p> 
+            </div> </li> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/21988277000642502" target="_blank" title="异世妖皇榜"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_21988277000642502/90" alt="异世妖皇榜"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/21988277000642502" target="_blank" title="异世妖皇榜">异世妖皇榜</a></h3> 
+             <h4><a class="default">夏爱君</a></h4> 
+             <p class="tag"><span class="org">玄幻</span><span class="red">已完结</span><span class="blue">172.44万</span></p> 
+             <p class="intro"> 高中生夏护意外遭遇车祸，灵魂离体，被吸纳入这无边黑暗之时…… “阎罗，阴界第一皇者！也是唯一的巅峰强者！” “只要打败他，你就能复生！” </p> 
+            </div> </li> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/6096408404734501" target="_blank" title="斩仙"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_6096408404734501/90" alt="斩仙"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/6096408404734501" target="_blank" title="斩仙">斩仙</a></h3> 
+             <h4><a class="default">任怨</a></h4> 
+             <p class="tag"><span class="org">仙侠</span><span class="red">连载中</span><span class="blue">456.15万</span></p> 
+             <p class="intro"> 　　前世，杨晨与人为善，却被欺压一生。 　　重生，杨晨选择成为刽子手，鬼头刀下了断恩怨，斩仙台上斩尽苍生。 　　人界斩人！ 　　妖界斩妖！ 　　魔界斩魔！ 　　仙界斩仙！ 　　===================== 　　斩仙台一群87093708 　　斩仙台二群105446040 　　起点任怨白金群（5200004,5200005） </p> 
+            </div> </li> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/11117266904644003" target="_blank" title="这里有仙女"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_11117266904644003/90" alt="这里有仙女"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/11117266904644003" target="_blank" title="这里有仙女">这里有仙女</a></h3> 
+             <h4><a class="default">潮头</a></h4> 
+             <p class="tag"><span class="org">仙侠</span><span class="red">连载中</span><span class="blue">8.64万</span></p> 
+             <p class="intro"> 宿主林天：“为什么要必须装比？不装比不行吗？”系统：“你可以不装比，但你可以不要钱吗？可以不要美女吗？可以不实现人生理想吗？”宿主林天：“我年轻聪明，英俊潇洒，玉树临风，装比还不会吗？我就装比了。”【潮头出品，必定精品】 </p> 
+            </div> </li> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/5294064104039601" target="_blank" title="决战苍穹之斗中斗"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_5294064104039601/90" alt="决战苍穹之斗中斗"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/5294064104039601" target="_blank" title="决战苍穹之斗中斗">决战苍穹之斗中斗</a></h3> 
+             <h4><a class="default">永不停的脚步</a></h4> 
+             <p class="tag"><span class="org">奇幻</span><span class="red">连载中</span><span class="blue">18.79万</span></p> 
+             <p class="intro"> 大千世界，亘古至今，谁主沉浮？ 魔王在世，绝地逢生，孰能呼呼千载之战者？三界之内，纵使那道家、仙人转世亦不能独道一家，于是，战之苍穹。 人间大地，自古武林高手，门派林立，修仙之道，亦不是阻挡魔、怪灵、妖精的侵入。那一刻，猛士崛起，武林内外，众说纷纭，立场不一。 战，因霸主而起；战，因界而对立；战，因立场而驱使着每一个参战者。 魔胎作怪，战事英雄随机出现。秀气的少年，突然进入了魔界地界，一战成名。谁知？却被魔王看好，教之、养之、护之。 杀戮，三界的对立。生灵涂炭，源于内心的呼唤，他，逐步地走出了困境，带着煎熬与伤痕再次成为人类的勇士。 仙界与魔界的争斗，妖怪与武者的决斗，鬼怪的恩怨情仇，恩恩怨怨、互利互刺，莫非真能在这无数次厮杀中结束，期待。 </p> 
+            </div> </li> 
+           <li> 
+            <div class="book-img"> 
+             <a href="/book/22393110000010102" target="_blank" title="升职宝典"> <img src="//bookcover.yuewen.com/qdbimg/349573/c_22393110000010102/90" alt="升职宝典"> </a> 
+            </div> 
+            <div class="book-info"> 
+             <h3><a href="/book/22393110000010102" target="_blank" title="升职宝典">升职宝典</a></h3> 
+             <h4><a class="default">牛不起</a></h4> 
+             <p class="tag"><span class="org">都市</span><span class="red">不限</span><span class="blue">117.04万</span></p> 
+             <p class="intro"> 　　讲述一个落魄青年捡到一本升职宝典进入外企之后的故事。。。 　　PS1：现实类作品 　　PS2:用事实证明,只要努力，屌丝也有未来 　　PS3:看过的，据说都升职加薪了 　　PS4:本书慢热,越到后面越精彩 　　 </p> 
+            </div> </li> 
+          </ul> 
+         </div> 
+         <div class="page-box cf"> 
+          <div class="pagination" id="page-container" data-total="1000" data-size="10" data-page="1" data-url="/free/all?pageNum=1&amp;pageSize=10&amp;gender=1&amp;catId=-1&amp;isFinish=-1&amp;isVip=1&amp;size=-1&amp;updT=-1&amp;orderBy=0"></div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+   <div class="footer"> 
+    <div class="box-center cf"> 
+     <div class="friend-link"> 
+      <em><a class="yuewen" href="//www.yuewen.com" target="_blank">阅文集团</a><cite>旗下网站：</cite></em> 
+      <a href="//www.qidian.com" target="_blank">起点中文网</a> 
+      <a href="//www.qdmm.com" target="_blank">起点女生网</a> 
+      <a href="http://chuangshi.qq.com" target="_blank">创世中文网</a> 
+      <a href="http://yunqi.qq.com" target="_blank">云起书院</a> 
+      <a href="http://www.rongshuxia.com" target="_blank">榕树下</a> 
+      <a href="//www.hongxiu.com" target="_blank">红袖添香</a> 
+      <a href="//www.readnovel.com">小说阅读网</a> 
+      <a href="//www.xs8.cn" target="_blank">言情小说吧</a> 
+      <a href="http://www.xxsy.net" target="_blank">潇湘书院</a> 
+      <a href="http://www.tingbook.com" target="_blank">天方听书网</a> 
+      <a href="http://www.lrts.me" target="_blank">懒人听书</a> 
+      <a href="http://yuedu.yuewen.com" target="_blank">阅文悦读</a> 
+      <a href="//www.yuewen.com/app.html#appqq" target="_blank">QQ阅读</a> 
+      <a href="//www.yuewen.com/app.html#appqd" target="_blank">起点读书</a> 
+      <a href="//www.yuewen.com/app.html#appzj" target="_blank">作家助手</a> 
+      <a href="//www.webnovel.com" target="_blank" title="起点中文网国际版">Qidian International</a> 
+     </div> 
+     <div class="footer-menu dib-wrap"> 
+      <a href="//www.yuewen.com" target="_blank">关于我们</a> 
+      <a href="//www.yuewen.com/#&amp;contact" target="_blank">联系我们</a> 
+      <a href="/help?id=11017" target="_blank">帮助中心</a> 
+      <a href="//www.yuewen.com/service.html" target="_blank">客服中心</a> 
+      <a href="//join.yuewen.com" target="_blank">加入我们</a> 
+      <a href="//write.qq.com/public/login.html?siteid=5" target="_blank">作家专区</a> 
+      <a href="http://comic.readnovel.com" target="_blank">动漫频道</a> 
+      <a href="http://game.readnovel.com" target="_blank">游戏频道</a> 
+      <a href="//jubao.yuewen.com" target="_blank">举报中心</a> 
+     </div> 
+     <div class="copy-right"> 
+      <p><span>Copyright © 2002-2019 www.readnovel.com All Rights Reserved</span>版权所有 北京网文欣阅科技有限公司</p> 
+      <p>北京网文欣阅科技有限公司 京ICP证100530号 <a href="http://www.miitbeian.gov.cn" target="_blank" style="margin: 0 5px">京ICP备11018996号</a> 京网文[2013]0135-029 </p> 
+      <p>请所有作者发布作品时务必遵守国家互联网信息管理办法规定，我们拒绝任何色情小说，一经发现，即作删除！客服电话：010-59357051 </p> 
+      <p>联系方式 总机 010-62111358 地址：北京市朝阳区天城天辰东路7号楼-2至8层101内北区7层701室</p> 
+      <p>本站所收录作品、社区话题、书库评论及本站所做之广告均属个人行为，与本站立场无关</p> 
+     </div> 
+     <div class="safety-box"> 
+      <div class="safety-img dib-wrap"> 
+       <a class="site1" href="http://www.12377.cn" target="_blank"></a> 
+       <a class="site2" href="http://www.shjbzx.cn" target="_blank"></a> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script data-ignore="true" src="//qidian.gtimg.com/lbf/1.0.4.1/LBF.js?max_age=31536000"></script> 
+</script> 
+</script> 
+  <script>
+    var _mtac = {};
+    (function() {
+        var mta = document.createElement("script");
+        mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.2";
+        mta.setAttribute("name", "MTAH5");
+        mta.setAttribute("sid", "500406364");
+        mta.setAttribute("cid", "500406409");
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(mta, s);
+    })();
+</script> 
+  <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<style>
+.right-book-list li {
+    float: left;
+    overflow: hidden;
+    width: 375px;
+    padding: 20px 0;
+    border-bottom: 1px solid #e6e6e6;
+	}
+	li, ol, ul {
+    list-style: none outside none;
+}
+
+</style>   
+ </body>
+</html>

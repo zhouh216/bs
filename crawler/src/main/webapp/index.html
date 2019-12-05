@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/crawler/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="/static/crawler/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/crawler/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body style="background:url(static/img/2.jpg);background-size: contain">
+<div style="height: 60px;padding-bottom: 20px;" align="center">
+    <div id="warning" class="alert alert-block" style="width: 60%;padding: 19px 35px 15px 14px;display: none;">
+        <img id="worningImage" src=""/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong id="warningType">qq</strong>
+        <span id="warningContent">qqq</span>
+        <button class="close" style="line-height: 30px;">关闭</button>
+    </div>
+</div>
+<div style="width: 100%;margin-top: 20px;" align="center">
+    <h1 style="font-weight: 500;margin-bottom: 45px;color: white;line-height: 24px;font-family: 楷体;font-size: 50px;font-weight: 900"onclick="window.location.reload()">XX 小说网</h1>
+    <div>
+        <nav class="navbar navbar-default" style="background-color: skyblue ;border: 0px" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand"
+                       style="color: #f89406;line-height: 24px;font-family: 楷体;font-size: 22px;font-weight: 900"
+                       onclick="window.location.reload()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav">
+                        <li><a class="head_li" style="color: black" onclick="headClick(1)">| 新书点击排行榜 |</a></li>
+                        <li><a class="head_li" style="color: black"onclick="headClick(2)">| 收藏排行榜 |</a></li>
+                        <li><a class="head_li" style="color: black" onclick="headClick(3)">| 喜欢排行榜 |</a></li>
+                        <li><a class="head_li" style="color: black"onclick="headClick(4)">| 男生排行榜 |</a></li>
+                        <li><a class="head_li" style="color: black"onclick="headClick(5)">| 女生排行榜 |</a></li>
+                        <li><a class="head_li" style="color: black" onclick="headClick(6)">| 都市排行榜 |</a></li>
+                        <li><a class="head_li" style="color: black"onclick="headClick(7)">| 言情排行榜 |</a></li>
+                        <li style="padding-left:50px;padding-top: 8px"><input type="text" id="fictionName"
+                                                                              style="height: 30px;width: 350px"
+                                                                              placeholder="喜欢的小说名字 ">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button onclick="searchByName(1)" class="btn btn-success" style="margin-top: -10px">
+                                搜索
+                            </button>
+                            <button onclick="loginOut()" class="btn btn-exit" style="margin-top: -10px">
+                                登出
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+
+</div>
+</body>
+<style>
+
+    .thumbnail {
+        border: 0px;
+        padding: 0px 0px 0px 0px;
+        height: 330px;
+        background-color: #c8e5bc;
+    }
+
+    .fictionName {
+        font-family: Arial;
+        font-weight: 700;
+        font-size: 20px;
+        height: 58px;
+        margin-bottom: 0px;
+    }
+
+    .fictionProperties {
+        height: 94px;
+    }
+
+    .author_span {
+        color: #0f0f0f;
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .isOver_span {
+        display: block;
+        width: 100%;
+        color: dodgerblue;
+        margin-bottom: 5px;
+    }
+
+    .size_span {
+        display: block;
+        width: 100%;
+        color: indigo;
+    }
+
+    .ax_flag {
+        font-size: 24px;
+        padding-left: 80px;
+        color: rebeccapurple
+    }
+
+    .wjx_flag {
+        font-size: 26px;
+        padding-left: 11px;
+        color: rebeccapurple;
+    }
+
+    .head_li {
+        line-height: 1px;
+        font-family: Arial;
+        font-size: 17px;
+        font-weight: 800;
+    }
+
+    .thumbnail {
+        padding-top: 10px;
+        width: 180px;
+    }
+
+    .caption {
+        float: none;
+    }
+
+</style>
+<script src="/static/crawler/js/my.js"></script>
+
+<script type="text/javascript">
+
+    window.onload = function () {
+        $.ajax({
+            url: "/fc/search/afterLoad" + window.location.search,
+            type: "get",
+            dataType: "JSON",
+            data: {},
+            success: function (data) {
+                if (data.success) {
+                    appendDataAfterLoad(data);
+                }
+            },
+            error: function () {
+                alertWarn("初始化数据异常!", 0, 3000);
+            }
+        });
+
+    }
+
+
+    function searchByName(page) {
+        console.log($("#fictionName").val());
+        console.log(typeof ($("#fictionName").val()));
+        $.ajax({
+            url: "/fc/search/byName" + window.location.search + "&fictionName=" + $("#fictionName").val() + "&page=" + page,
+            type: "get",
+            dataType: "JSON",
+            data: {},
+            success: function (data) {
+                if (data.success) {
+                    appendData(data);
+                } else {
+                    alertWarn(data.errMsg, 0, 3000);
+                }
+            },
+            error: function () {
+                alertWarn("调用接口异常!", 0, 3000);
+            }
+        });
+
+    }
+    function loginOut() {
+        $.ajax({
+            url:"/user/loginOut"+ window.location.search ,
+            type:"get",
+            dataType:"JSON",
+            data:{},
+            success:function (data) {
+
+                alert("退出成功!");
+                window.location.reload();
+            },
+            error: function () {
+                alertWarn("调用接口异常!", 0, 3000);
+            }
+        })
+
+    }
+
+
+    function searchDetail(id, name) {
+        $.ajax({
+            url: "/fc/search/detail" + window.location.search + "&id=" + id,
+            type: "get",
+            dataType: "JSON",
+            data: {},
+            success: function (data) {
+                if (data.success) {
+                    console.log(data)
+                    appendDetailData(data, name, id);
+                } else {
+                    alertWarn(data.errMsg, 0, 3000);
+                }
+            },
+            error: function () {
+                alertWarn("调用接口异常!", 0, 3000);
+            }
+        });
+
+    }
+
+    function wjxClick(id, name) {
+        var ele = $("#wjxClick" + id);
+        var className = ele.attr("class");
+        var url = "";
+        var flag = false;
+        if (className.indexOf("empty") >= 0) {
+            flag = true;
+            url = "/fc/search/collect" + window.location.search + "&id=" + id + "&num=" + 1;
+        } else {
+            url = "/fc/search/collect" + window.location.search + "&id=" + id + "&num=" + -1;
+        }
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: "JSON",
+            data: {},
+            success: function (data) {
+                if (data.success) {
+                    if (flag) {
+                        alert("收藏成功!")
+                        ele.attr("class", "wjx_flag glyphicon glyphicon-star");
+                    } else {
+                        alert("取消收藏成功!")
+                        ele.attr("class", "wjx_flag glyphicon glyphicon-star-empty");
+                    }
+                } else {
+                    alertWarn(data.errMsg, 0, 3000);
+                }
+            },
+            error: function () {
+                alertWarn("调用接口异常!", 0, 3000);
+            }
+        });
+
+    }
+
+    function axClick(id, name) {
+        var ele = $("#axClick" + id);
+        var className = ele.attr("class");
+        var url = "";
+        var flag = false;
+        if (className.indexOf("empty") >= 0) {
+            flag = true;
+            url = "/fc/search/subscription" + window.location.search + "&id=" + id + "&num=" + 1;
+        } else {
+            url = "/fc/search/subscription" + window.location.search + "&id=" + id + "&num=" + -1;
+        }
+        $.ajax({
+            url: url,
+            type: "get",
+            dataType: "JSON",
+            data: {},
+            success: function (data) {
+                if (data.success) {
+                    if (flag) {
+                        alert("喜欢成功!")
+                        ele.attr("class", "ax_flag glyphicon glyphicon-heart");
+                    } else {
+                        alert("取消喜欢成功!")
+                        ele.attr("class", "ax_flag glyphicon glyphicon-heart-empty");
+                    }
+                } else {
+                    alertWarn(data.errMsg, 0, 3000);
+                }
+            },
+            error: function () {
+                alertWarn("调用接口异常!", 0, 3000);
+            }
+        });
+
+    }
+
+    function nextPage(page, id) {
+        $.ajax({
+            url: "/fc/search/detail" + window.location.search + "&id=" + id + "&page=" + page,
+            type: "get",
+            dataType: "JSON",
+            data: {},
+            success: function (data) {
+                if (data.success) {
+                    console.log(data)
+                    appendPageData(data, id);
+                } else {
+                    alertWarn(data.errMsg, 0, 3000);
+                }
+            },
+            error: function () {
+                alertWarn("调用接口异常!", 0, 3000);
+            }
+        });
+
+    }
+
+    function headClick(item) {
+        var url = "/fc/search/";
+        switch (item) {
+            case 1:
+                url = url + "clickOrder";
+                break;
+            case 2:
+                url = url + "collectOrder";
+                break;
+            case 3:
+                url = url + "subscriptionOrder";
+                break;
+            case 4:
+                url = url + "male";
+                break;
+            case 5:
+                url = url + "female";
+                break;
+            case 6:
+                url = url + "romantic";
+                break;
+            case 7:
+                url = url + "urban";
+                break;
+        }
+        $.ajax({
+            url: url + window.location.search,
+            type: "post",
+            data: {},
+            dataType: "json",
+            async: false,
+            processData: false,
+            contentType: false,
+            success: function (result) {
+                if (result.success) {
+                    appendData(result);
+                } else {
+                    alertWarn(result.errMsg, 0, 3000);
+                }
+            },
+            error: function (e) {
+                alertWarn("调用接口异常！", 0, 3000);
+            }
+        });
+
+    }
+
+    function appendDataAfterLoad(result) {
+        $("body").append("<div id=\"_contentArea\"></div>");
+        var appendStr = "<div class=\"container\" id='showList'>  <!-- 开加一个container的目的是为了让整体布局居中 -->\n" +
+            "    <!-- 开始 -->\n" +
+            "    <div class=\"row\"><!-- 将要加入的略缩图放入row中 -->\n" +
+            "        <!-- 第一张略缩图开始 -->";
+        for (i = 0; i < result.data.length; i++) {
+            var data = result.data[i];
+            appendStr += "<div class=\"col-lg-2 col-md-4 col-sm-2 col-xs-12\" >\n" +
+                "                <div class=\"thumbnail\" style=\"border-radius: 8px\">\n" +
+                "                    <img onclick='searchDetail(" + data.id + ",\"" + data.fictionName + "\")' src=" + data.img + ">\n" +
+                "                    <div class=\"caption\">\n" +
+                "                        <p onclick='searchDetail(" + data.id + ",\"" + data.fictionName + "\")' class=\"fictionName\">" + data.fictionName + "</p>\n" +
+                "                        <p class=\"fictionProperties\"><span class=\"author_span\">" + data.fictionAuthor + "</span><br/>\n" +
+                "                            <span class=\"isOver_span\">" + data.isOver + "</span><br/>\n" +
+                "                            <span class=\"size_span\">" + data.fictionSize + "</span><br/></p>\n" +
+                "                        <p style=\"margin-bottom: -100px;display: block\">\n" +
+                "\n";
+            var wjxClass = "";
+            if (data.wjxFlag == 0) {
+                wjxClass = "wjx_flag glyphicon glyphicon-star-empty";
+            } else {
+                wjxClass = "wjx_flag glyphicon glyphicon-star";
+            }
+            var axClass = "";
+            if (data.axFlag == 0) {
+                axClass = "ax_flag glyphicon glyphicon-heart-empty";
+            } else {
+                axClass = "ax_flag glyphicon glyphicon-heart";
+            }
+            appendStr += "                            <span id=\"wjxClick" + data.id + "\" class='" + wjxClass + "' onclick='wjxClick(" + data.id + ")' style=\"\"></span>\n" +
+                "                            <!--<span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>-->\n" +
+                "                            <span id=\"axClick" + data.id + "\" class='" + axClass + "'  onclick='axClick(" + data.id + ")' aria-hidden=\"true\"></span>\n" +
+                "                            <!--<span class=\"glyphicon glyphicon-heart\" aria-hidden=\"true\"></span>-->\n" +
+                "                        </p>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "            </div>";
+        }
+        appendStr += "</div>\n" + "</div>";
+        $("#_contentArea").empty().append(appendStr);
+    }
+
+    function appendData(result) {
+        $("#contentArea_").remove();
+        $("#_contentArea").remove();
+        $("body").append("<div id=\"contentArea\"></div>");
+        if (parseInt(result.totalPage) == 0) {
+            $("#contentArea").empty().append("<div align='center'> 空 </div>");
+            return;
+        }
+        var appendStr = "<div class=\"container\" id='showList'>  <!-- 开加一个container的目的是为了让整体布局居中 -->\n" +
+            "    <!-- 开始 -->\n" +
+            "    <div class=\"row\"><!-- 将要加入的略缩图放入row中 -->\n" +
+            "        <!-- 第一张略缩图开始 -->";
+        for (i = 0; i < result.data.length; i++) {
+            var data = result.data[i];
+            appendStr += "<div class=\"col-lg-2 col-md-4 col-sm-2 col-xs-12\" >\n" +
+                "                <div class=\"thumbnail\" style=\"border-radius: 8px\">\n" +
+                "                    <img onclick='searchDetail(" + data.id + ",\"" + data.fictionName + "\")' src=" + data.img + ">\n" +
+                "                    <div class=\"caption\">\n" +
+                "                        <p onclick='searchDetail(" + data.id + ",\"" + data.fictionName + "\")' class=\"fictionName\">" + data.fictionName + "</p>\n" +
+                "                        <p class=\"fictionProperties\"><span class=\"author_span\">" + data.fictionAuthor + "</span><br/>\n" +
+                "                            <span class=\"isOver_span\">" + data.isOver + "</span><br/>\n" +
+                "                            <span class=\"size_span\">" + data.fictionSize + "</span><br/></p>\n" +
+                "                        <p style=\"margin-bottom: -100px;display: block\">\n" +
+                "\n";
+            var wjxClass = "";
+            if (data.wjxFlag == 0) {
+                wjxClass = "wjx_flag glyphicon glyphicon-star-empty";
+            } else {
+                wjxClass = "wjx_flag glyphicon glyphicon-star";
+            }
+            var axClass = "";
+            if (data.axFlag == 0) {
+                axClass = "ax_flag glyphicon glyphicon-heart-empty";
+            } else {
+                axClass = "ax_flag glyphicon glyphicon-heart";
+            }
+            appendStr += "                            <span id=\"wjxClick" + data.id + "\" class='" + wjxClass + "' onclick='wjxClick(" + data.id + ")' style=\"\"></span>\n" +
+                "                            <!--<span class=\"glyphicon glyphicon-star\" aria-hidden=\"true\"></span>-->\n" +
+                "                            <span id=\"axClick" + data.id + "\" class='" + axClass + "' onclick='axClick(" + data.id + ")' aria-hidden=\"true\"></span>\n" +
+                "                            <!--<span class=\"glyphicon glyphicon-heart\" aria-hidden=\"true\"></span>-->\n" +
+                "                        </p>\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "            </div>";
+        }
+        appendStr += "</div>\n" + "</div>";
+        appendStr += "<div align=\"center\" style=\"width: 50%;margin-left: 25%;margin-top: 10px\">\n" +
+            "    <nav aria-label=\"...\">\n" +
+            "        <ul class=\"pager\">\n";
+        if (parseInt(result.currentPage) == 1 && parseInt(result.currentPage) == parseInt(result.totalPage)) {
+            appendStr +=
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        } else if (parseInt(result.currentPage) == 1) {
+            appendStr +=
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "            <li class=\"next\"><a style=\"background-color: grey;color: white\" onclick=\"searchByName(" + (parseInt(result.currentPage) + 1) + ")\">下一页 <span aria-hidden=\"true\">&rarr;</span></a></li>\n" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        } else if (parseInt(result.currentPage) == parseInt(result.totalPage)) {
+            appendStr +=
+                "            <li class=\"previous\"><a style=\"background-color: grey;color: white;\" onclick=\"searchByName(" + (parseInt(result.currentPage) - 1) + ")\"><span aria-hidden=\"true\">&larr;</span> 上一页</a></li>\n" +
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        } else {
+            appendStr += "            <li class=\"previous\"><a style=\"background-color: grey;color: white;\" onclick=\"searchByName(" + (parseInt(result.currentPage) - 1) + ")\"><span aria-hidden=\"true\">&larr;</span> 上一页</a></li>\n" +
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "            <li class=\"next\"><a style=\"background-color: grey;color: white\" onclick=\"searchByName(" + (parseInt(result.currentPage) + 1) + ")\">下一页 <span aria-hidden=\"true\">&rarr;</span></a></li>\n" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        }
+
+        $("#contentArea").empty().append(appendStr);
+    }
+
+
+    function appendDetailData(result, name, id) {
+        $("#contentArea").remove();
+        $("#_contentArea").remove();
+        $("body").append("<div id=\"contentArea_\"\n" +
+            "     style=\"width: 60%;margin-left:20%; border-radius:25px; background-color: #c8e5bc;padding: 30px 30px 30px 30px ;\"\n" +
+            "     align=\"center\">\n"+
+                "<div align='right'> <button class=\"btn btn-success\" style='margin-top: 10px' onclick='window.location.reload()'>回到首页</button></div>"+
+            "    <p><span style=\"font-family: 黑体;font-size: 30px;font-weight: 800;\">" + name + "</span></p>\n" +
+            "    <div id=\"realContentArea\" align=\"left\">\n" +
+            "\n" +
+            "    </div>\n" +
+            "</div>");
+        if (parseInt(result.totalPage) == 0) {
+            $("#realContentArea").append("空");
+            return;
+        }
+        var appendStr = result.data.fictionContent;
+        appendStr += "<div align=\"center\" style=\"width: 50%;margin-left: 25%;margin-top: 10px\">\n" +
+            "    <nav aria-label=\"...\">\n" +
+            "        <ul class=\"pager\">\n";
+        if (parseInt(result.currentPage) == 1 && parseInt(result.currentPage) == parseInt(result.totalPage)) {
+            appendStr +=
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        } else if (parseInt(result.currentPage) == 1) {
+            appendStr +=
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "            <li class=\"next\"><a style=\"background-color: grey;color: white\" onclick=\"nextPage(" + (parseInt(result.currentPage) + 1) + "," + id + ")\">下一页 <span aria-hidden=\"true\">&rarr;</span></a></li>\n" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        } else if (parseInt(result.currentPage) == parseInt(result.totalPage)) {
+            appendStr +=
+                "            <li class=\"previous\"><a style=\"background-color: grey;color: white;\" onclick=\"nextPage(" + (parseInt(result.currentPage) - 1) + "," + id + ")\"><span aria-hidden=\"true\">&larr;</span> 上一页</a></li>\n" +
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        } else {
+            appendStr += "            <li class=\"previous\"><a style=\"background-color: grey;color: white;\" onclick=\"nextPage(" + (parseInt(result.currentPage) - 1) + "," + id + ")\"><span aria-hidden=\"true\">&larr;</span> 上一页</a></li>\n" +
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "            <li class=\"next\"><a style=\"background-color: grey;color: white\" onclick=\"nextPage(" + (parseInt(result.currentPage) + 1) + "," + id + ")\">下一页 <span aria-hidden=\"true\">&rarr;</span></a></li>\n" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        }
+        $("#realContentArea").append(appendStr);
+    }
+
+    function appendPageData(result, id) {
+        if (parseInt(result.totalPage) == 0) {
+            $("#realContentArea").append("空");
+            return;
+        }
+        var appendStr = result.data.fictionContent;
+        appendStr += "<div align=\"center\" style=\"width: 50%;margin-left: 25%;margin-top: 10px\">\n" +
+            "    <nav aria-label=\"...\">\n" +
+            "        <ul class=\"pager\">\n";
+        if (parseInt(result.currentPage) == 1 && parseInt(result.currentPage) == parseInt(result.totalPage)) {
+            appendStr +=
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        } else if (parseInt(result.currentPage) == 1) {
+            appendStr +=
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "            <li class=\"next\"><a style=\"background-color: grey;color: white\" onclick=\"nextPage(" + (parseInt(result.currentPage) + 1) + "," + id + ")\">下一页 <span aria-hidden=\"true\">&rarr;</span></a></li>\n" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        } else if (parseInt(result.currentPage) == parseInt(result.totalPage)) {
+            appendStr +=
+                "            <li class=\"previous\"><a style=\"background-color: grey;color: white;\" onclick=\"nextPage(" + (parseInt(result.currentPage) - 1) + "," + id + ")\"><span aria-hidden=\"true\">&larr;</span> 上一页</a></li>\n" +
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        } else {
+            appendStr += "            <li class=\"previous\"><a style=\"background-color: grey;color: white;\" onclick=\"nextPage(" + (parseInt(result.currentPage) - 1) + "," + id + ")\"><span aria-hidden=\"true\">&larr;</span> 上一页</a></li>\n" +
+                "<li><a href=\"#\">第&nbsp;" + result.currentPage + "&nbsp;页</a></li>" +
+                "            <li class=\"next\"><a style=\"background-color: grey;color: white\" onclick=\"nextPage(" + (parseInt(result.currentPage) + 1) + "," + id + ")\">下一页 <span aria-hidden=\"true\">&rarr;</span></a></li>\n" +
+                "        </ul>\n" +
+                "    </nav>\n" +
+                "</div>";
+        }
+        $("#realContentArea").empty();
+        $("#realContentArea").append(appendStr);
+    }
+</script>
+</html>

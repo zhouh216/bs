@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>登录页面</title>
+    <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+    <meta name="author" content="Vincent Garreau"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" media="screen" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/reset.css"/>
+</head>
+<body>
+
+<div id="particles-js">
+    <div class="login">
+        <div class="login-top">
+            登录
+        </div>
+        <div class="login-center clearfix">
+            <div class="login-center-img"><img src="static/img/name.png"/></div>
+            <div class="login-center-input">
+                <input id="name" type="text" name="name" value="" placeholder="请输入您的用户名" onfocus="this.placeholder=''"
+                       onblur="this.placeholder='请输入您的用户名'"/>
+                <div class="login-center-input-text">用户名</div>
+            </div>
+        </div>
+        <div class="login-center clearfix">
+            <div class="login-center-img"><img src="static/img/password.png"/></div>
+            <div class="login-center-input">
+                <input id="password" type="password" name="password" value="" placeholder="请输入您的密码"
+                       onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'"/>
+                <div class="login-center-input-text">密码</div>
+            </div>
+        </div>
+        <div id="login" onclick="login()" class="login-button">
+            登陆
+        </div>
+        <div class="register-button" onclick="register()" >注册</div>
+        <!--</form>-->
+    </div>
+    <div class="sk-rotating-plane"></div>
+</div>
+
+<!-- scripts -->
+<script src="static/js/particles.min.js"></script>
+<script src="static/js/app.js"></script>
+<script src="/static/crawler/js/my.js"></script>
+<script type="text/javascript">
+    function login() {
+        var name = $("#name").val();
+        var password = $("#password").val();
+        $.ajax({
+            url: "/user/login",
+            type: "POST",
+            dataType: "JSON",
+            data: {"name": name, "password": password},
+            success: function (data) {
+                if(data.success){
+                    window.location.href = "/index?key="+data.data;
+                }else{
+                   alert(data.errMsg);
+                }
+            },
+            error: function () {
+                alertWarn("调用接口异常!")
+            }
+        })
+    }
+    function register() {
+        window.location.href = "/register";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/crawler/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="/static/crawler/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div style="height: 30px;padding-bottom: 20px;" align="center">
+    <div id="warning" class="alert alert-block" style="width: 60%;display: none;">
+        <img id="worningImage" src=""/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <strong id="warningType"></strong>
+        <span id="warningContent"></span>
+        <button class="close" style="line-height: 33px;">关闭</button>
+    </div>
+</div>
+<div id="content_area" style="width: 100%;margin-top: 30px;" align="center">
+    <h1 style="font-weight: 500;margin-bottom: 60px;">爬取启动页面</h1>
+    <div class="form-group">
+        <span style="font-family: Arial;font-size: 20px;font-weight: bold">网站：</span>
+        <select class="form-control" id="webType" style="width: 160px">
+            <option value="0">&nbsp;---&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请选择&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---　
+            </option>
+            <option value="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小说阅读网</option>
+            <option value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17k小说</option>
+            <option value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;纵横小说网</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="font-family: Arial;font-size: 20px;font-weight: bold">地址：</span>
+        <input type="text" id="url" style="width: 400px" class="form-control" placeholder=" 输入对应网址的地址 ">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-success" onclick="crawler()" style="margin-bottom: 10px;">开始抓取</button>
+    </div>
+</div>
+</body>
+<script>
+
+    function crawler() {
+        var webType = $("#webType").val();
+        var url = $("#url").val();
+        if (webType == 0) {
+            alertWarn("亲！抓取网站必须选择... ", 0, 2000);
+            return;
+        }
+        if (url == '') {
+            alertWarn("亲！抓取地址必须输入... ", 0, 2000);
+            return;
+        }
+        $.ajax({
+            url: "/fc/crawler?url=" + url + "&webType=" + webType,
+            type: "get",
+            data: "",
+            dataType: "json",
+            async: false,
+            processData: false,
+            contentType: false,
+            success: function (result) {
+                if (result.success) {
+                    alertWarn("正在努力后台抓取... ", 1, 2000);
+                } else {
+                    alertWarn(result.errMsg, 0, 2000);
+                }
+            },
+            error: function (e) {
+                alertWarn("调用接口异常... ", 0, 2000);
+            }
+        })
+    }
+</script>
+<script src="/static/crawler/js/my.js"></script>
+<style>
+
+    body {
+        background-color: #e1edf7;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+</style>
+</html>

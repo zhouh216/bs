@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>登录页面</title>
+    <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+    <meta name="author" content="Vincent Garreau"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" media="screen" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/reset.css"/>
+</head>
+<body>
+
+<div id="particles-js">
+    <div class="login">
+        <div class="login-top">
+            注册
+        </div>
+        <div class="login-center clearfix">
+            <div class="login-center-img"><img src="static/img/name.png"/></div>
+            <div class="login-center-input">
+                <input id="name" type="text" name="name" value="" placeholder="请输入您的用户名" onfocus="this.placeholder=''"
+                       onblur="this.placeholder='请输入您的用户名'"/>
+                <div class="login-center-input-text">用户名</div>
+            </div>
+        </div>
+        <div class="login-center clearfix">
+            <div class="login-center-img"><img src="static/img/password.png"/></div>
+            <div class="login-center-input">
+                <input id="password" type="password" name="password" value="" placeholder="请输入您的密码"
+                       onfocus="this.placeholder=''" onblur="this.placeholder='请输入您的密码'"/>
+                <div class="login-center-input-text">密码</div>
+            </div>
+        </div>
+        <div class="register-button" onclick="register()">注册</div>
+        <!--</form>-->
+    </div>
+    <div class="sk-rotating-plane"></div>
+</div>
+
+<!-- scripts -->
+<script src="static/js/particles.min.js"></script>
+<script src="static/js/app.js"></script>
+<script src="/static/crawler/js/my.js"></script>
+<script type="text/javascript">
+    function register() {
+        $.ajax({
+            url: "/user/register",
+            type: "POST",
+            dataType: "JSON",
+            data: {"name": $("#name").val(), "password": $("#password").val()},
+            success: function (data) {
+                if (data.success) {
+                    alert(data.data);
+                    window.location.href = "/login";
+                } else {
+                    alert(data.errMsg);
+                    window.location.reload();
+                }
+            },
+            error: function () {
+                alertWarn("调用接口异常!")
+            }
+        })
+    }
+</script>
+</body>
+</html>

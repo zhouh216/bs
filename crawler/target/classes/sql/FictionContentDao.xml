@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fiction.crawler.biz.dao.sql.FictionContentDao" >
+
+  <!-- 自定义接口 -->
+  <insert id="insertList" parameterType="list" >
+    insert into fiction_content (create_time, update_time, fiction_id,
+    page, fiction_content)
+    values
+    <foreach collection="list" item="item" index= "index" separator =",">
+      (
+      NOW(), NOW(), #{item.fictionId,jdbcType=INTEGER},
+      #{item.page,jdbcType=INTEGER}, #{item.fictionContent,jdbcType=LONGVARCHAR}
+      )
+    </foreach>
+  </insert>
+</mapper>

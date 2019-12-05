@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    #多数据源配置
+    uts1:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/fiction_crawler_db
+      username: root
+      password: 123456
+    uts2:
+      url: jdbc:mysql://127.0.0.1:3306/shiro
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+    
+
+
+
+server:
+  port: 80
+
+mybatis:
+  type-aliases-package: com.fiction.crawler.biz.dao/**/
+  mapper-locations: classpath*:sql/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+debug: true
+#日志输出
+logging:
+  level:
+    com.fiction.crawler.biz.dao.mapper.UserMapper : debug
