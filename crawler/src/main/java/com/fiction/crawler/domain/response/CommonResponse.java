@@ -1,8 +1,10 @@
 package com.fiction.crawler.domain.response;
 
+import com.github.pagehelper.PageInfo;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * the introduction of class
@@ -17,6 +19,11 @@ public class CommonResponse<T> extends BasePageResponse{
     private String sucMsg="";
     private T data;
     public static final int ERRORCODE=-1;
+    private Integer pageSize;
+    private Integer pageNum;
+    private List<T> list;
+    private Long total;
+
 
     public static <T> CommonResponse success(T data) {
         CommonResponse commonRequest = new CommonResponse();
@@ -31,6 +38,17 @@ public class CommonResponse<T> extends BasePageResponse{
         commonRequest.setTotalPage(totalPage);
         commonRequest.setCurrentPage(currentPage);
         return commonRequest;
+    }
+    public static <T> CommonResponse successPage(List<T> data){
+        CommonResponse<T> commonResponse = new CommonResponse<T>();
+        PageInfo<T> pageInfo = new PageInfo<T>(data);
+        commonResponse.setSuccess(true);
+        commonResponse.setTotalPage(pageInfo.getPages());
+        commonResponse.setPageNum(pageInfo.getPageNum());
+        commonResponse.setPageSize(pageInfo.getPageSize());
+        commonResponse.setList(data);
+        commonResponse.setTotal(pageInfo.getTotal());
+        return commonResponse;
     }
     public static <T> CommonResponse success(String sucMsg, T data) {
         CommonResponse commonRequest = new CommonResponse();

@@ -83,7 +83,7 @@
         </if>
         'true' as QUERYID,
         <include refid="Base_Column_List"/>
-        from ${table}
+        from user
         <if test="_parameter != null">
             <include refid="Example_Where_Clause"/>
         </if>
@@ -264,5 +264,15 @@
         </if>
     </select>
 
+    <select id="userTestList" resultMap="BaseResultMap">
+        select
+        user.id, user.create_time, user.update_time,user.name, user.password, user.collect_list,user.subscription_list
+        from user left join user_1 u
+        on user.id=u.id
+        where u.id != 0
+    </select>
 
+    <select id="user" resultMap="BaseResultMap">
+        select * from user_1
+    </select>
 </mapper>

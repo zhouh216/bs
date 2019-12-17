@@ -1,5 +1,8 @@
 package com.fiction.crawler.domain.dto;
 
+import com.fiction.crawler.validator.FlagValidator;
+
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -10,9 +13,13 @@ public class User implements Serializable {
 
     private Date updateTime;
 
+    @NotNull(message = "名称不能为空")
     private String name;
 
+    @NotNull(message = "密码不能为空")
     private String password;
+    @FlagValidator(value = {"0","1"}, message = "用户状态不正确")
+    private Integer status;
 
     private String collectList;
 
@@ -32,6 +39,14 @@ public class User implements Serializable {
 
     public User() {
         super();
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Integer getId() {

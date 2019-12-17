@@ -7,6 +7,7 @@ import com.fiction.crawler.biz.utils.StringUtil;
 import com.fiction.crawler.domain.dto.User;
 import com.fiction.crawler.domain.dto.UserExample;
 import com.fiction.crawler.domain.response.CommonResponse;
+import com.github.pagehelper.PageHelper;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -60,9 +61,9 @@ public class UserServiceImpl implements UserService {
 //    @SelectConnection(name="uts2")
     public CommonResponse checkUser(User user) {
         try {
-            if (user == null || StringUtils.isBlank(user.getName()) || StringUtils.isBlank(user.getPassword())) {
-                return CommonResponse.failure("账号密码不能为空！");
-            }
+//            if (user == null || StringUtils.isBlank(user.getName()) || StringUtils.isBlank(user.getPassword())) {
+//                return CommonResponse.failure("账号密码不能为空！");
+//            }
             UserExample userExample = new UserExample();
             if(user.getName().equals("pipixia22")){
                 userExample.setTable("user1");
@@ -99,5 +100,25 @@ public class UserServiceImpl implements UserService {
             return CommonResponse.failure("该用户未登录");
         }
 
+    }
+
+    @Override
+    public CommonResponse findListUsers(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<User> users = userMapper.selectByExample(new UserExample());
+        return CommonResponse.successPage(users);
+    }
+
+    @Override
+    public CommonResponse userTestList(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<User> users = userMapper.userTestList();
+        return CommonResponse.successPage(users);
+    }
+
+    @Override
+    public CommonResponse user() {
+        List<User> user = userMapper.user();
+        return CommonResponse.successPage(user);
     }
 }

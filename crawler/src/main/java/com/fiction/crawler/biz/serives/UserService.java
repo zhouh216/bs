@@ -14,4 +14,10 @@ public interface UserService {
     CommonResponse checkUser(User user);
 
     CommonResponse loginOut(String key);
+
+    CommonResponse findListUsers(int pageNum, int pageSize);
+
+    CommonResponse userTestList(Integer pageNum, Integer pageSize);
+
+    CommonResponse user();
 }
