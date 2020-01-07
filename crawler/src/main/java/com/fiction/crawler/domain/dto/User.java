@@ -2,6 +2,8 @@ package com.fiction.crawler.domain.dto;
 
 import com.fiction.crawler.validator.FlagValidator;
 
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
@@ -18,8 +20,10 @@ public class User implements Serializable {
 
     @NotNull(message = "密码不能为空")
     private String password;
+
     @FlagValidator(value = {"0","1"}, message = "用户状态不正确")
-    private Integer status;
+    @NotNull(message = "状态码不能为空")
+        private Integer status;
 
     private String collectList;
 

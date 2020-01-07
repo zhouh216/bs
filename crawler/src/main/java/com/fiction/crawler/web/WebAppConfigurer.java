@@ -20,6 +20,7 @@ public class WebAppConfigurer implements WebMvcConfigurer {
         registry.addInterceptor(loginInterceptor()).addPathPatterns("/**")
                 .excludePathPatterns("/login**").excludePathPatterns("/static/**")
                 .excludePathPatterns("/user/**").excludePathPatterns("/register**")
+                .excludePathPatterns("/order/**")
                 .excludePathPatterns("/fc/crawler**").excludePathPatterns("/crawler**");
     }
 }
